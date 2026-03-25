@@ -7,7 +7,163 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background-color: #060a10 !important;
+      color: #c9d1d9;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, #0a0f1a 0%, #0d1420 60%, #060a10 100%);
+      border-bottom: 1px solid #1a2030;
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(88,166,255,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #58a6ff, #a371f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 0 4px #1a2030, 0 0 28px rgba(88,166,255,0.2);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #f0f6fc 30%, #58a6ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .hero-role {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #58a6ff;
+      margin-bottom: 14px;
+    }
+    .hero-bio {
+      font-size: 0.98rem;
+      color: #8b949e;
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+    .hero-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary { background: #58a6ff; color: #060a10; }
+    .btn-primary:hover { background: #79b8ff; transform: translateY(-1px); }
+
+    /* Main */
+    main { max-width: 1100px; margin: 0 auto; padding: 70px 24px 90px; }
+
+    /* Section header */
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .section-header h2 { font-size: 1.25rem; font-weight: 600; color: #f0f6fc; white-space: nowrap; }
+    .section-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge-live { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.35); }
+    .badge-repo { background: rgba(88,166,255,0.12); color: #58a6ff; border: 1px solid rgba(88,166,255,0.3); }
+    .section-line { flex: 1; height: 1px; background: #1e2a3a; }
+    section + section { margin-top: 80px; }
+
+    /* Grid */
+    .repo-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      column-gap: 15px;
+      row-gap: 25px;
+    }
+    .repo-list-centered {
+      grid-template-columns: repeat(2, minmax(0, 400px));
+      justify-content: center;
+    }
+
+    /* Card */
+    .repo-card {
+      background: #0d1525;
+      border: 1px solid #2a3a54;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .repo-card:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+      box-shadow: 0 12px 40px rgba(88,166,255,0.18);
+    }
+    .card-image {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #2a3a54;
+    }
+    .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h3 { font-size: 1rem; font-weight: 600; color: #f0f6fc; margin-bottom: 8px; line-height: 1.4; }
+    .card-body p { font-size: 0.87rem; color: #8b949e; flex: 1; margin-bottom: 18px; line-height: 1.6; }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .link-live { background: rgba(63,185,80,0.12); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .link-live:hover { background: rgba(63,185,80,0.22); transform: translateX(2px); }
+    .link-repo { background: rgba(88,166,255,0.1); color: #58a6ff; border: 1px solid rgba(88,166,255,0.25); }
+    .link-repo:hover { background: rgba(88,166,255,0.2); transform: translateX(2px); }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 2rem; }
+      .repo-list, .repo-list-centered { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   {{ content }}
