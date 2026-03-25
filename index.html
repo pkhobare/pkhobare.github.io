@@ -1,55 +1,97 @@
 ---
 layout: default
-title: Home
+title: Portfolio
 ---
-<head>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<h1>Welcome to My Portfolio</h1>
-<p>This is where I showcase my work using the Minimal theme.</p> 
 
-<div class="repo-list">
-        <div class="repo-card">
-            <h3>Immersive PanoViewer - 3D Panorama Viewer</h3>
-            <p>A 3D panorama viewer for immersive experiences.</p>
-            <a href="https://immersive-panorama-viewer.vercel.app/" target="_blank">View Project</a>
-        </div>
+<header class="hero">
+  <div class="hero-avatar">PK</div>
+  <h1>Paritosh Khobare</h1>
+  <p class="hero-role">Frontend Developer</p>
+  <p class="hero-bio">Building interactive web experiences with React, TypeScript, and 3D web technologies.</p>
+  <div class="hero-links">
+    <a href="https://github.com/pkhobare" target="_blank" class="btn-primary">GitHub Profile</a>
+    <a href="mailto:pkhobare@gmail.com" class="btn-secondary">Get in Touch</a>
+  </div>
+</header>
 
-        <div class="repo-card">
-            <img src="Assets/mapbox-app.png" alt="Mapbox App">
-            <h3>Mapbox App with Navigation & Terrain mode</h3>
-            <p>App to tinker with Mapbox API.</p>
-            <a href="https://mapbox-app-taupe.vercel.app/" target="_blank">View Project</a>
-        </div>
+<main>
+  <section>
+    <div class="section-header">
+      <h2>Live Projects</h2>
+      <span class="section-badge badge-live">Deployed</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="repo-list">
 
-        <!-- Example of a repository card -->
-        <div class="repo-card">
-            <img src="Assets/TodoList.png" alt="ToDoList">
-            <h3>React To Do List App using Typescript</h3>
-            <p>To do list app using React & Typescript.</p>
-            <a href="https://github.com/pkhobare/React-Typescript-to-do-list-app" target="_blank">View Repository</a>
+      <div class="repo-card">
+        <div class="card-image-placeholder">🌐</div>
+        <div class="card-body">
+          <h3>Immersive PanoViewer</h3>
+          <p>A 3D panorama viewer for immersive experiences.</p>
+          <a href="https://immersive-panorama-viewer.vercel.app/" target="_blank" class="card-link link-live">↗ View Live</a>
         </div>
-        
-        <div class="repo-card">
-            <img src="Assets/Maps API.jpg" alt="Maps API">
-            <h3>Google Maps API demo app</h3>
-            <p>Typescript app to use geolocation API of Google Maps.</p>
-            <a href="https://github.com/pkhobare/Typescript_MapsAPI_demo" target="_blank">View Repository</a>
-        </div>
+      </div>
 
-        <div class="repo-card">
-            <img src="Assets/three-fiber.png" alt="R3F App">
-            <h3>React Three Fiber Project</h3>
-            <p>Vibe coding cursor case study using React Three Fiber (React + ThreeJS) for interactive 3D experiences.</p>
-            <a href="https://github.com/pkhobare/ReactThreeFiberDemo" target="_blank">View Repository</a>
+      <div class="repo-card">
+        <img src="Assets/mapbox-app.png" alt="Mapbox App" class="card-image">
+        <div class="card-body">
+          <h3>Mapbox App — Navigation & Terrain</h3>
+          <p>Interactive map app with driving directions and terrain mode powered by the Mapbox API.</p>
+          <a href="https://mapbox-app-taupe.vercel.app/" target="_blank" class="card-link link-live">↗ View Live</a>
         </div>
+      </div>
 
-        <div class="repo-card">
-            <img src="Assets/r3f-copilot.svg" alt="R3F Copilot">
-            <h3>React Three Fiber — Copilot Demo</h3>
-            <p>Interactive 3D scene built with React Three Fiber using GitHub Copilot.</p>
-            <a href="https://github.com/khobareutube-cyber/Copilot-Repos" target="_blank">View Repository</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>Code Repositories</h2>
+      <span class="section-badge badge-repo">Open Source</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="repo-list">
+
+      <div class="repo-card">
+        <img src="Assets/TodoList.png" alt="ToDoList" class="card-image">
+        <div class="card-body">
+          <h3>React To Do List App</h3>
+          <p>Full-featured to-do list app built with React and TypeScript.</p>
+          <a href="https://github.com/pkhobare/React-Typescript-to-do-list-app" target="_blank" class="card-link link-repo">⌥ View Repository</a>
         </div>
+      </div>
 
-        <!-- Add more repository cards here -->
-</div>
+      <div class="repo-card">
+        <img src="Assets/Maps API.jpg" alt="Maps API" class="card-image">
+        <div class="card-body">
+          <h3>Google Maps API Demo</h3>
+          <p>TypeScript app using the Google Maps Geocoding API to search and pin addresses on an interactive map.</p>
+          <a href="https://github.com/pkhobare/Typescript_MapsAPI_demo" target="_blank" class="card-link link-repo">⌥ View Repository</a>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <img src="Assets/three-fiber.png" alt="R3F App" class="card-image">
+        <div class="card-body">
+          <h3>React Three Fiber Project</h3>
+          <p>Vibe coding case study using React Three Fiber (React + Three.js) for interactive 3D experiences.</p>
+          <a href="https://github.com/pkhobare/ReactThreeFiberDemo" target="_blank" class="card-link link-repo">⌥ View Repository</a>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <img src="Assets/r3f-copilot.svg" alt="R3F Copilot" class="card-image">
+        <div class="card-body">
+          <h3>React Three Fiber — Copilot Demo</h3>
+          <p>Interactive 3D scene built with React Three Fiber using GitHub Copilot for AI-assisted development.</p>
+          <a href="https://github.com/khobareutube-cyber/Copilot-Repos" target="_blank" class="card-link link-repo">⌥ View Repository</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Built with Jekyll · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+</footer>
